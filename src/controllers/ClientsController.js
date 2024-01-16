@@ -10,7 +10,16 @@ class ClientsController {
 
   async create(req, res) {
     try {
-      const dataCreated = await this.clients.create();
+      const { name, email, phone, password } = req.body;
+
+      const clientData = {
+        name,
+        email,
+        phone,
+        password,
+      };
+
+      const dataCreated = await this.clients.create(clientData);
 
       res.status(this.postSuccess).json({ success: true, data: dataCreated });
     } catch (error) {

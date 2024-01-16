@@ -18,14 +18,7 @@ class Clients {
     };
   }
 
-  async create() {
-    const clientData = {
-      name: "test",
-      email: "testing@gmail.com",
-      phone: 11967511300,
-      password: "testing0000",
-    };
-
+  async create(clientData) {
     const query = "INSERT INTO ??(??, ??, ??, ??) VALUES(?, ?, ?, ?)";
 
     try {
